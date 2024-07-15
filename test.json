@@ -1,9 +1,9 @@
 {
-    "url": "https://raw.githubusercontent.com/ramiH0208/HostImages/main/test.yaml",
+    "url": "https://raw.githubusercontent.com/ramiH0208/HostImages/main/testbis.yaml",
     "urls": [
         {
-            "url": "https://raw.githubusercontent.com/ramiH0208/HostImages/main/test.yaml",
-            "name": "Foo"
+            "url": "https://raw.githubusercontent.com/ramiH0208/HostImages/main/testbis.yaml",
+            "name": "Booxi"
         }
     ]
 }
