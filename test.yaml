@@ -1,24 +1,35 @@
 swagger: "2.0"
 info:
   version: "v1"
-  title: Please login first
+  title: Please login first to use Booxi API
 
 host: booxi.free.beeceptor.com
 
 paths:
-
-  /ApiKey/PartnerKey:
+  /login:
     post:
-      summary: Logs in
+      summary: "Login with API Key and Partner Key"
+      description: "Login endpoint that accepts API key and partner key"
+      operationId: "login"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
       parameters:
-        - name: ApiKey
+        - in: "body"
+          name: "body"
+          description: "API Key and Partner Key needed to login"
           required: true
-          in: path
-          type: string
-        - name: PartnerKey
-          required: true
-          in: path
-          type: string
+          schema:
+            type: "object"
+            properties:
+              apiKey:
+                type: "string"
+              partnerKey:
+                type: "string"
+            required:
+              - "apiKey"
+              - "partnerKey"
       responses:
         200:
           description: Login was successful
