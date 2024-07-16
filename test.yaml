@@ -1,35 +1,29 @@
-swagger: "2.0"
+openapi: 3.0.0
 info:
   version: "v1"
-  title: Please login first to use Booxi API
-
-host: booxi.free.beeceptor.com
-
+  title: "Please login first to use Booxi API"
+servers:
+  - url: https://booxi.free.beeceptor.com
 paths:
   /login:
     post:
       summary: "Login with API Key and Partner Key"
       description: "Login endpoint that accepts API key and partner key"
       operationId: "login"
-      consumes:
-        - "application/json"
-      produces:
-        - "application/json"
-      parameters:
-        - in: "body"
-          name: "body"
-          description: "API Key and Partner Key needed to login"
-          required: true
-          schema:
-            type: "object"
-            properties:
-              apiKey:
-                type: "string"
-              partnerKey:
-                type: "string"
-            required:
-              - "apiKey"
-              - "partnerKey"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                apiKey:
+                  type: "string"
+                partnerKey:
+                  type: "string"
+              required:
+                - "apiKey"
+                - "partnerKey"
       responses:
         200:
-          description: Login was successful
+          description: "Login was successful"
